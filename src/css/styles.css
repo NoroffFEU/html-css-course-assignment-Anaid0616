@@ -39,8 +39,7 @@ header {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.71);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.71);
   .logo {
-    width: 150px;
-    max-width: 160px;
+    max-width: 150px;
     margin-left: 60px;
   }
   .cart {
@@ -102,6 +101,7 @@ header {
    position: static;
 }
 
+
   .header-menu li {
     display: inline-block;
     padding: 0px;
@@ -121,6 +121,7 @@ header {
 margin-right: 0px;
 margin-left: 0px;
 }
+
 
 .header-menu li {
 padding: 0px;
@@ -172,33 +173,37 @@ margin-left: -30px;
 .front-img {
   width: 100%;
   object-fit: cover;
-  min-height: 100px;
-  max-height: 476px;
+  height: 476px;
   position: relative;
   box-shadow: 0px 0px 1px 3px rgba(0,0,0,0.30);
 -webkit-box-shadow: 0px 0px 1px 3px rgba(0,0,0,0.30);
 -moz-box-shadow: 0px 0px 1px 3px rgba(0,0,0,0.30);
 }
 
-.cyberpunklogo {
+.start-game .game-content {
+display: flex;
+flex-direction: column;
+align-items: center;
   position: absolute;
-  min-width: 300px;
+  text-align: center;
   top: 40px;
-  left: 68px;
-  width: 39.5%;
+  left: 5.5%;
+}
+
+.cyberpunklogo {
+  max-width: 80%;
 }
 
 .view-game-button {
   background-image: linear-gradient(to bottom,#82017F,#DF06A6);
   color: #ffffff;
-  position: absolute;
-  top: 60%;
-  left: 17.5%;
   text-decoration: none;
   text-align: center;
   font-size: 1rem;
   font-weight: 501;
   padding: 18px 28px;
+  margin-top: -25px;
+  max-width: 80%;
   border-radius: 40px;
   box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.60);
   -webkit-box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.60);
@@ -406,6 +411,7 @@ margin-right: 30px;
 
 
 /* cell-phones and small tablets */
+
 @media screen and (min-width: 300px) and (max-width: 800px) {
      .extra-credit h1 {
       font-size: 1.75rem;
@@ -448,6 +454,57 @@ margin-right: 30px;
   }
 }
 
+@media screen and (min-width: 300px) and (max-width: 550px) {
+  .start-game .game-content {
+      top: 200px;
+      left: 0%;
+    }
+    
+    .cyberpunklogo {
+      max-width: 80%;
+    }
+    
+    .view-game-button {
+      font-size: 0.75rem;
+     padding: 12px 30px;
+    }
+  }
+
+@media screen and (min-width: 551px) and (max-width: 1100px) {
+  .start-game .game-content {
+      top: 180px;
+      left: 0%;
+    }
+    
+    .cyberpunklogo {
+      max-width: 70%;
+    }
+    
+    .view-game-button {
+      font-size: 0.90rem;
+     padding: 15px 35px;
+     margin-top: -30px;
+    }
+  }
+
+  @media screen and (min-width: 1100px) and (max-width: 1350px) {
+    .start-game .game-content {
+        top: 130px;
+        left: 2%;
+      }
+      
+      .cyberpunklogo {
+        max-width: 75%;
+      }
+      
+      .view-game-button {
+        font-size: 0.90rem;
+       padding: 17px 40px;
+       margin-top: -30px;
+      }
+    }
+
+    
 @media screen and (min-width: 300px) and (max-width: 555px) {
   .games-container-wrapper {
     justify-content: center;
@@ -463,6 +520,8 @@ margin-right: 30px;
   .bestseller-img-container {
     width: 200px;
     height: 200px;
+    margin-top: 4%;
+    margin-bottom: 4%;
   }
 }
 
@@ -515,16 +574,7 @@ margin-right: 30px;
  /* smaller and larger tablets */
 @media screen and (min-width: 801px) and (max-width: 1300px) {
 
-  .cyberpunklogo {
-  top: 12%;
-  left: 4%;
-  max-width: 46%;
-}
 
-.view-game-button {
-  top: 250px;
-  left: 18%;
-}
 }
 .games {
   display: flex;
@@ -532,16 +582,6 @@ margin-right: 30px;
   justify-content: space-between;
   align-items: flex-start;
    }
-
-/* desktop and larger screens*/
-@media screen and (min-width: 1800px) and (max-width: 2200px) {
-.cyberpunklogo 
-{
-top: 3px;
-left: 68px;
-width: 780px;
-}
-}
 
 
 /* games */
