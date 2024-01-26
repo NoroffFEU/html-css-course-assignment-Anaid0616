@@ -573,8 +573,6 @@ margin-right: 30px;
  
  /* smaller and larger tablets */
 @media screen and (min-width: 801px) and (max-width: 1300px) {
-
-
 }
 .games {
   display: flex;
@@ -588,6 +586,7 @@ margin-right: 30px;
 
 .products {
   width: 100%;
+  justify-content: center;
   text-align: center;
   .go-back {
     margin-left: 60px;
@@ -1044,8 +1043,8 @@ margin-right: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
   }
+  
   .contact-text {
     margin-left: 5%;
     margin-right: 5%; 
