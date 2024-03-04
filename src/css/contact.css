@@ -1,0 +1,208 @@
+@import url("./global.css");
+
+.contact-us {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.contact-us h1 {
+  font-size: 1.9rem;
+  background-image: linear-gradient(to bottom, #82017f, #df06a6);
+  background-size: 3% 100%;
+  background-position: 0 10%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.contact-text {
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 6%;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.contact-content > * {
+  flex: 1;
+}
+
+.contact-content h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 12px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 28px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: -13px;
+  margin-bottom: -13px;
+}
+
+.info {
+  margin-left: 2.5%;
+}
+
+.info .contact-info {
+  margin-right: 28%;
+}
+
+.contact-info h3 {
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.contact-info p {
+  margin-top: 4px;
+}
+
+.contact_icons {
+  margin-right: 20px;
+  max-width: 50px;
+}
+
+.message-form {
+  margin-left: 28%;
+}
+
+.message-form input {
+  display: block;
+  padding-left: 10px;
+  border-radius: 5px 5px 5px 5px;
+  width: 93%;
+  height: 55px;
+  margin-right: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  vertical-align: -4%;
+}
+
+.message-form #message {
+  font-family: "Inter", sans-serif, Verdana;
+  font-weight: bold;
+  padding: 14px 50px 4px 10px;
+  border-radius: 5px 5px 5px 5px;
+  width: 93%;
+  outline: none;
+  min-height: 180px;
+  margin-bottom: 23px;
+  margin-top: 12px;
+}
+
+.hover:hover {
+  border: 3px solid #000;
+}
+
+#message:hover {
+  border: 2px solid #000;
+}
+
+.message-form button {
+  background-image: linear-gradient(to bottom, #82017f, #df06a6);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 35px 10px 35px;
+  border-radius: 5px 5px 5px 5px;
+  border: none;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.connect-info {
+  margin-right: 28%;
+  margin-top: 60px;
+}
+
+.connect-info nav {
+  margin-left: 1px;
+}
+
+.connect-info nav li {
+  display: flex;
+}
+
+.connect-info nav ul {
+  padding: 0px;
+}
+.connect-info li {
+  padding-bottom: 8px;
+}
+
+.connect-info a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.connect-info a:hover {
+  text-decoration: underline;
+}
+
+#border {
+  border-right: 1px solid #ffffff;
+}
+
+.social-media {
+  max-height: 48px;
+  margin-right: 20px;
+  margin-left: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* cell-phones and small tablets */
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-text {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #border {
+    border-right: none;
+  }
+
+  .message-form button {
+    margin-bottom: 15%;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .message-form {
+    margin-left: 0;
+  }
+
+  .message-form input {
+    width: 80%;
+  }
+
+  .message-form #message {
+    width: 80%;
+  }
+}
