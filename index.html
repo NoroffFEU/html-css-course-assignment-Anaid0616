@@ -53,7 +53,7 @@
             class="cyberpunklogo"
             alt="Cyberpunk logo"
           />
-          <a href="./html/games.html" class="view-game-button">Available Now</a>
+          <a href="./html/games.html" class="cta-button">Available Now</a>
         </div>
       </section>
 
@@ -68,7 +68,9 @@
 
           <div class="credit-content">
             <div class="credit-wrapper">
-              <a href="./html/games.html" class="shop-now-button">Shop Now</a>
+              <a href="./html/games.html" class="cta-button shop-button"
+                >Shop Now</a
+              >
               <img
                 src="./assets/images/tradingarrows.png"
                 alt="Icon-tradingarrows"
@@ -209,30 +211,36 @@
 
         <div class="connect">
           <h3>CONNECT WITH US</h3>
-          <nav class="footer-nav">
+          <nav class="footer-nav aicon">
             <ul>
               <li>
-                <img
-                  src="./assets/images/facebook.png"
-                  alt="Facebook icon"
-                  class="social-icons"
-                />
+                <a href="./html/contact.html">
+                  <img
+                    src="./assets/images/facebook.png"
+                    alt="Facebook icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Facebook</p>
               </li>
               <li>
-                <img
-                  src="./assets/images/instagramlogo.png"
-                  alt="Instagram icon"
-                  class="social-icons"
-                />
+                <a href="./html/contact.html">
+                  <img
+                    src="./assets/images/instagramlogo.png"
+                    alt="Instagram icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Instagram</p>
               </li>
               <li>
-                <img
-                  src="./assets/images/youtubelogo.png"
-                  alt="Youtube icon"
-                  class="social-icons"
-                />
+                <a href="./html/contact.html">
+                  <img
+                    src="./assets/images/youtubelogo.png"
+                    alt="Youtube icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Youtube</p>
               </li>
             </ul>
@@ -252,10 +260,12 @@
               placeholder="Enter your E-mail"
               required
             />
-            <button type="submit">JOIN</button>
+            <button type="submit" class="cta-button" id="sign-button">
+              JOIN
+            </button>
           </form>
 
-          <div class="payments">
+          <div class="payments margin">
             <img
               src="./assets/images/klarna.png"
               alt="Klarna"

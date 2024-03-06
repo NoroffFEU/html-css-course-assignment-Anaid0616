@@ -1,14 +1,5 @@
 @import url("./global.css");
 
-.products {
-  width: 100%;
-  text-align: center;
-}
-
-.products go-back {
-  margin-left: 60px;
-}
-
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

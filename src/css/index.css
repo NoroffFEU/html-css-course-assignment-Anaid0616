@@ -30,22 +30,6 @@
   max-width: 80%;
 }
 
-.view-game-button {
-  background-image: linear-gradient(to bottom, #82017f, #df06a6);
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 501;
-  padding: 18px 28px;
-  margin-top: -25px;
-  max-width: 80%;
-  border-radius: 40px;
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-}
-
 .extra-credit {
   background-color: #070814;
   border-radius: 40px;
@@ -74,24 +58,17 @@
   margin-left: 35px;
   font-weight: 300;
 }
+
 .credit-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.shop-now-button {
-  background-image: linear-gradient(to bottom, #82017f, #df06a6);
-  color: #ffffff;
-  text-decoration: none;
+.shop-button {
   font-size: 0.9rem;
-  font-weight: 501;
   padding: 17px 45px;
-  border-radius: 40px;
   margin-left: 30px;
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .credit-content .arrows {
@@ -144,9 +121,7 @@
 }
 
 .games-hover:hover {
-  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
 }
 
 .games-container-wrapper {
@@ -168,7 +143,7 @@
 }
 
 .games-container {
-  width: 130px;
+  min-width: 120px;
   height: 170px;
   overflow: hidden;
 }
@@ -199,6 +174,7 @@
 
 #g2 {
   transform: rotate(16deg);
+  margin-left: -5px;
 }
 
 #g3 {
@@ -242,12 +218,30 @@
 }
 
 .bestseller-hover:hover {
-  filter: drop-shadow(0 0 0.18rem #000);
+  transform: scale(1.02);
 }
 
 /* media queries */
 
-@media screen and (min-width: 300px) and (max-width: 800px) {
+@media screen and (max-width: 357px) {
+  .games-container {
+    max-width: 40px;
+    height: 150px;
+  }
+
+  .games-box {
+    max-width: 340px;
+  }
+
+  .games-container-wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 210px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 800px) {
   .extra-credit h1 {
     font-size: 1.75rem;
     margin-right: 37px;
@@ -345,7 +339,7 @@
   }
 }
 
-@media screen and (min-width: 300px) and (max-width: 699px) {
+@media screen and (min-width: 200px) and (max-width: 699px) {
   .bestsellers-covers {
     display: flex;
     flex-wrap: wrap;

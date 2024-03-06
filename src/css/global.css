@@ -14,6 +14,7 @@ body {
 }
 
 /* header */
+
 header {
   font-family: "Merriweather Sans", sans-serif;
   position: sticky;
@@ -34,16 +35,18 @@ header {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.71);
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.71);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.71);
-  .logo {
-    max-width: 150px;
-    margin-left: 60px;
-  }
-  .cart {
-    width: 42px;
-    height: 32px;
-    padding-left: 10px;
-    margin-right: 60px;
-  }
+}
+
+.logo {
+  max-width: 150px;
+  margin-left: 60px;
+}
+
+.cart {
+  width: 42px;
+  height: 32px;
+  padding-left: 10px;
+  margin-right: 60px;
 }
 
 .hamburger-icon {
@@ -89,22 +92,82 @@ header {
   text-decoration: underline;
 }
 
+/* index */
+
+.cta-button {
+  background-image: linear-gradient(to bottom, #82017f, #df06a6);
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 501;
+  padding: 18px 28px;
+  margin-top: -25px;
+  max-width: 80%;
+  border-radius: 40px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button:hover {
+  transform: scale(1.08);
+}
+
 /* games */
+
+.shadow {
+  box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
+}
 
 /* about */
 
-/* games, about, contact */
+/* games, about, product */
+
+.headline {
+  text-align: center;
+}
+
+.headline h1 {
+  display: inline-block;
+  font-size: 1.9rem;
+  margin-bottom: 5%;
+  background-image: linear-gradient(to right, #82017f, #df06a6);
+  background-size: 100% 4px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
 
 .go-back {
   text-align: left;
   margin-left: 60px;
-  a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+}
+
+.go-back a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.go-back a:hover {
+  text-decoration: underline;
+}
+
+/* contact, checkout */
+
+.contact-checkout h1 {
+  background-image: linear-gradient(to bottom, #82017f, #df06a6);
+  background-size: 3% 100%;
+  background-position: 0 10%;
+  margin-bottom: 3%;
+  padding-left: 20px;
+}
+
+/* index, product, checkout, confirmation */
+
+.footer .margin {
+  margin-top: 40px;
 }
 
 /* footer */
@@ -154,6 +217,10 @@ footer {
   width: 30%;
   display: flex;
   flex-direction: column;
+}
+
+.connect .aicon a:hover {
+  transform: scale(1.09);
 }
 
 .sign-up {
@@ -242,18 +309,14 @@ footer {
   border: 0;
 }
 
-.sign-up button {
-  background-image: linear-gradient(to bottom, #82017f, #df06a6);
-  color: #ffffff;
+#sign-button {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 500;
+  font-size: 0.75rem;
   padding: 5px 23px 5px 18px;
   border-radius: 0px 5px 5px 0px;
   margin-left: -3px;
   border: none;
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .payments {
@@ -286,6 +349,10 @@ footer {
   .header-menu {
     padding: 40px 60px 60px 20px;
     line-height: 90px;
+  }
+
+  .logo {
+    margin-left: 0px;
   }
 }
 
@@ -358,7 +425,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 300px) and (max-width: 700px) {
+@media screen and (min-width: 200px) and (max-width: 700px) {
   .footer {
     display: flex;
     flex-wrap: wrap;

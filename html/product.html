@@ -37,16 +37,59 @@
       </section>
     </header>
 
-    <main></main>
+    <main>
+      <section class="headline">
+        <p class="go-back">
+          <a href="../index.html">Home</a> / <a href="./games.html">Games</a> /
+          PC
+        </p>
+        <h1>PC</h1>
+      </section>
+
+      <section class="product">
+        <div class="product-content pcenter">
+          <div class="background-product">
+            <div class="product-img-container">
+              <img
+                src="../assets/images/cyberpunkcover.jpg"
+                alt="Cyberpunk"
+                class="product-img shadow"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="product-content">
+          <h2>Cyberpunk</h2>
+          <p class="genre">PC, Action, Role-playing</p>
+          <h3>$59.99</h3>
+          <p class="part1">
+            Welcome to the gripping world of Cyberpunk — a game that immerses
+            you in a dystopian future where humanity and technology collide.
+            Navigate the neon-soaked streets and face the challenges that come
+            your way. Hackers maneuver in shadowy alleys, and danger lurks
+            around every corner.
+          </p>
+          <p class="part2">
+            Customize your arsenal, from futuristic firearms to deadly blades,
+            to suit your playstyle. As you explore, interact with a diverse cast
+            of characters, uncovering their hidden motives and forging alliances
+            that could change the course of your journey. Feel the adrenaline
+            rush as you wield weapons and cyber enhancements, plunging into a
+            story where every decision influences the city's fate
+          </p>
+          <a href="./checkout.html" class="cta-button">Add to cart</a>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <section class="footer">
         <div class="menu">
-          <h3>QUICK MENU</h3>
+          <h4>QUICK MENU</h4>
           <nav class="footer-nav">
             <ul>
               <li><a href="../index.html">Home</a></li>
-              <li><a href="#">Games</a></li>
+              <li><a href="./games.html">Games</a></li>
               <li><a href="./about.html">About</a></li>
               <li><a href="./contact.html">Contact</a></li>
             </ul>
@@ -54,31 +97,37 @@
         </div>
 
         <div class="connect">
-          <h3>CONNECT WITH US</h3>
-          <nav class="footer-nav">
+          <h4>CONNECT WITH US</h4>
+          <nav class="footer-nav aicon">
             <ul>
               <li>
-                <img
-                  src="../assets/images/facebook.png"
-                  alt="Facebook icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/facebook.png"
+                    alt="Facebook icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Facebook</p>
               </li>
               <li>
-                <img
-                  src="../assets/images/instagramlogo.png"
-                  alt="Instagram icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/instagramlogo.png"
+                    alt="Instagram icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Instagram</p>
               </li>
               <li>
-                <img
-                  src="../assets/images/youtubelogo.png"
-                  alt="Youtube icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/youtubelogo.png"
+                    alt="Youtube icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Youtube</p>
               </li>
             </ul>
@@ -86,7 +135,7 @@
         </div>
 
         <div class="sign-up">
-          <h3>SIGN UP</h3>
+          <h4>SIGN UP</h4>
           <p class="light">Unleash Your Adventure! Get Limitless Gaming Fun!</p>
           <form>
             <label for="emailInput" class="visually-hidden"
@@ -98,9 +147,11 @@
               placeholder="Enter your E-mail"
               required
             />
-            <button type="submit">JOIN</button>
+            <button type="submit" class="cta-button" id="sign-button">
+              JOIN
+            </button>
           </form>
-          <div class="payments">
+          <div class="payments margin">
             <img
               src="../assets/images/klarna.png"
               alt="Klarna"

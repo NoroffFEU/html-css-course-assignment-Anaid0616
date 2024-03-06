@@ -38,10 +38,10 @@
     </header>
 
     <main>
-      <div class="products">
+      <section class="headline">
         <p class="go-back"><a href="../index.html">Home</a> / Games</p>
         <h1>Games</h1>
-      </div>
+      </section>
 
       <section class="product-list">
         <a href="../html/product.html">
@@ -215,30 +215,36 @@
 
         <div class="connect">
           <h3>CONNECT WITH US</h3>
-          <nav class="footer-nav">
+          <nav class="footer-nav aicon">
             <ul>
               <li>
-                <img
-                  src="../assets/images/facebook.png"
-                  alt="Facebook icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/facebook.png"
+                    alt="Facebook icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Facebook</p>
               </li>
               <li>
-                <img
-                  src="../assets/images/instagramlogo.png"
-                  alt="Instagram icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/instagramlogo.png"
+                    alt="Instagram icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Instagram</p>
               </li>
               <li>
-                <img
-                  src="../assets/images/youtubelogo.png"
-                  alt="Youtube icon"
-                  class="social-icons"
-                />
+                <a href="./contact.html">
+                  <img
+                    src="../assets/images/youtubelogo.png"
+                    alt="Youtube icon"
+                    class="social-icons"
+                  />
+                </a>
                 <p>Youtube</p>
               </li>
             </ul>
@@ -258,7 +264,9 @@
               placeholder="Enter your E-mail"
               required
             />
-            <button type="submit">JOIN</button>
+            <button type="submit" class="cta-button" id="sign-button">
+              JOIN
+            </button>
           </form>
           <div class="payments">
             <img
