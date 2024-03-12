@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
-    <title>Document</title>
+    <title>Checkout Game Hub</title>
     <link rel="stylesheet" href="../src/css/checkout.css" />
     <script
       src="https://kit.fontawesome.com/e9ab0044c8.js"
@@ -76,57 +76,69 @@
               <h2>2. Shipping</h2>
               <div class="form-border">
                 <form>
-                  <label for="name">Name*</label>
-                  <input
-                    type="text"
-                    id="name"
-                    class="hover"
-                    placeholder="Name*"
-                    required
-                  />
+                  <div class="form-details-wrapper">
+                    <div class="form-details">
+                      <label for="name">Name*</label>
+                      <input
+                        type="text"
+                        id="name"
+                        class="hover"
+                        placeholder="Name"
+                        required
+                      />
+                    </div>
 
-                  <label for="lastname">Last Name*</label>
-                  <input
-                    type="text"
-                    id="lastname"
-                    class="hover"
-                    placeholder="Last Name*"
-                    required
-                  />
+                    <div class="form-details">
+                      <label for="lastname">Last Name*</label>
+                      <input
+                        type="text"
+                        id="lastname"
+                        class="hover"
+                        placeholder="Last Name"
+                        required
+                      />
+                    </div>
+                  </div>
 
                   <label for="adress">Street Adress*</label>
                   <input
                     type="text"
                     id="adress"
                     class="hover"
-                    placeholder="Street Adress*"
+                    placeholder="Street Adress (Add Apt, Suite, Floor (Optional))"
                     required
                   />
 
-                  <label for="zipcode">Zip Code*</label>
-                  <input
-                    type="text"
-                    id="zipcode"
-                    class="hover"
-                    placeholder="Zip Code*"
-                    required
-                  />
+                  <div class="form-details-wrapper">
+                    <div class="form-details">
+                      <label for="zipcode">Zip Code*</label>
+                      <input
+                        type="text"
+                        id="zipcode"
+                        class="hover"
+                        placeholder="Zip Code"
+                        required
+                      />
+                    </div>
 
-                  <label for="city">City*</label>
-                  <input
-                    type="text"
-                    id="city"
-                    class="hover"
-                    placeholder="City*"
-                    required
-                  />
+                    <div class="form-details">
+                      <label for="city">City*</label>
+                      <input
+                        type="text"
+                        id="city"
+                        class="hover"
+                        placeholder="City"
+                        required
+                      />
+                    </div>
+                  </div>
 
                   <label for="State">State*</label>
                   <input
                     type="text"
                     id="state"
                     class="hover"
-                    placeholder="State*"
+                    placeholder="State"
                     required
                   />
 
@@ -135,7 +147,7 @@
                     type="email"
                     id="email"
                     class="hover"
-                    placeholder="Email*"
+                    placeholder="Email"
                     required
                   />
 
@@ -156,12 +168,14 @@
             <div class="checkout-steps">
               <h2>3. Payment method</h2>
               <div class="paymethod">
-                <p>Klarna</p>
-                <p>Paypal</p>
+                <p class="underline order-top-margin">Klarna</p>
+                <p class="underline">Paypal</p>
                 <p>Pay now by card</p>
                 <div class="card-form">
                   <form>
-                    <label for="creditcardnumber">Credit card number*</label>
+                    <label for="creditcardnumber" class="visually-hidden"
+                      >Credit card number*</label
+                    >
                     <input
                       type="text"
                       id="creditcardnumber"
@@ -170,23 +184,31 @@
                       required
                     />
 
-                    <label for="MM/YY">MM/YY*</label>
-                    <input
-                      type="text"
-                      id="MM/YY"
-                      class="hover"
-                      placeholder="MM/YY*"
-                      required
-                    />
+                    <div class="form-details-wrapper">
+                      <div class="form-details">
+                        <label for="MM/YY" class="visually-hidden"
+                          >MM/YY*</label
+                        >
+                        <input
+                          type="text"
+                          id="MM/YY"
+                          class="hover"
+                          placeholder="MM/YY*"
+                          required
+                        />
+                      </div>
 
-                    <label for="CVC">CVC*</label>
-                    <input
-                      type="text"
-                      id="CVC"
-                      class="hover"
-                      placeholder="CVC*"
-                      required
-                    />
+                      <div class="form-details">
+                        <label for="CVC" class="visually-hidden">CVC*</label>
+                        <input
+                          type="text"
+                          id="CVC"
+                          class="hover"
+                          placeholder="CVC*"
+                          required
+                        />
+                      </div>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -196,8 +218,8 @@
               <h2>4. Your order</h2>
               <div class="your-order">
                 <div class="total">
-                  <p><strong>Subtotal</strong></p>
-                  <p><strong>$59.99</strong></p>
+                  <p class="order-top-margin"><strong>Subtotal</strong></p>
+                  <p class="order-top-margin"><strong>$59.99</strong></p>
                 </div>
                 <div class="total">
                   <p>Discounts</p>
