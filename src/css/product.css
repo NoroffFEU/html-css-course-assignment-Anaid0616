@@ -1,7 +1,7 @@
 @import url("./global.css");
 
 .product {
-  margin-bottom: 60px;
+  margin: 0 10px 80px 10px;
 }
 
 .product-img-container {
@@ -45,14 +45,19 @@ h3 {
 
 .genre {
   padding-left: 8%;
+  margin-bottom: 40px;
+  font-weight: 200;
 }
 
 .product-content h2 {
   font-size: 1.6rem;
+  padding-top: 10px;
+  margin-bottom: -5px;
 }
 
 .product-content h3 {
   font-size: 1.8rem;
+  padding-bottom: 20px;
 }
 
 .product-content .part1 {
@@ -67,27 +72,80 @@ h3 {
   margin-left: 20px;
 }
 
+.atc {
+  border-radius: 5px;
+  margin-left: 8%;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
 /* media queries */
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 200px) and (max-width: 400px) {
+  .atc {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .atc {
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
   .product {
     display: flex;
   }
 
   .product-content .part1 {
-    padding: 0 90px 0 0;
+    padding: 0 40px 0 20px;
   }
 
   .product-content .part2 {
-    padding: 0 90px 60px 0;
+    padding: 0 40px 40px 20px;
   }
 
   .product-content h2,
   h3 {
-    padding-left: 0;
+    padding-left: 20px;
   }
 
   .genre {
-    padding-left: 0;
+    padding-left: 20px;
+  }
+
+  .pcenter {
+    padding-left: 30px;
+  }
+
+  .atc {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  .atc {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media screen and (min-width: 1340px) {
+  .product {
+    margin: 0 100px 80px 100px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .product-content .part1 {
+    padding-right: 90px;
+  }
+
+  .product-content .part2 {
+    padding-right: 90px;
+    padding-bottom: 60px;
   }
 }

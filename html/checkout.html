@@ -46,12 +46,180 @@
       </section>
 
       <section class="checkout">
-        <div><h2>1. Your Cart</h2></div>
-        <div><h2>2. Shipping</h2></div>
-        <div><h2>3. Payment method</h2></div>
-        <div>
-          <h2>4. Your order</h2>
-          <a href="./confirmation.html" class="cta-button">Complete order</a>
+        <div class="checkout-steps">
+          <h2>1. Your Cart</h2>
+          <div class="cart-wrapper">
+            <div>
+              <img
+                src="../assets/images/cyberpunkcover.jpg"
+                class="checkout-img shadow"
+                alt=""
+              />
+            </div>
+            <div>
+              <p>Item</p>
+              <h3>Cyberpunk</h3>
+              <p>PC, action, role-playing</p>
+            </div>
+            <div>
+              <p>Price</p>
+              <p>$59.99</p>
+            </div>
+            <div><p>Quantity</p></div>
+            <div><p>Total</p></div>
+          </div>
+        </div>
+
+        <div class="shipping-payment-order-wrapper">
+          <div class="orderinfo-container">
+            <div class="checkout-steps">
+              <h2>2. Shipping</h2>
+              <div class="form-border">
+                <form>
+                  <label for="name">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="hover"
+                    placeholder="Name*"
+                    required
+                  />
+
+                  <label for="lastname">Last Name*</label>
+                  <input
+                    type="text"
+                    id="lastname"
+                    class="hover"
+                    placeholder="Last Name*"
+                    required
+                  />
+
+                  <label for="adress">Street Adress*</label>
+                  <input
+                    type="text"
+                    id="adress"
+                    class="hover"
+                    placeholder="Street Adress*"
+                    required
+                  />
+
+                  <label for="zipcode">Zip Code*</label>
+                  <input
+                    type="text"
+                    id="zipcode"
+                    class="hover"
+                    placeholder="Zip Code*"
+                    required
+                  />
+
+                  <label for="city">City*</label>
+                  <input
+                    type="text"
+                    id="city"
+                    class="hover"
+                    placeholder="City*"
+                    required
+                  />
+
+                  <label for="State">State*</label>
+                  <input
+                    type="text"
+                    id="state"
+                    class="hover"
+                    placeholder="State*"
+                    required
+                  />
+
+                  <label for="email">Email*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="hover"
+                    placeholder="Email*"
+                    required
+                  />
+
+                  <label for="phonenumber">Phone Number</label>
+                  <input
+                    type="text"
+                    id="phonenumber"
+                    class="hover"
+                    placeholder="Phone Number"
+                  />
+                </form>
+                <p>Use as billing address</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="orderinfo-container">
+            <div class="checkout-steps">
+              <h2>3. Payment method</h2>
+              <div class="paymethod">
+                <p>Klarna</p>
+                <p>Paypal</p>
+                <p>Pay now by card</p>
+                <div class="card-form">
+                  <form>
+                    <label for="creditcardnumber">Credit card number*</label>
+                    <input
+                      type="text"
+                      id="creditcardnumber"
+                      class="hover"
+                      placeholder="Credit card number*"
+                      required
+                    />
+
+                    <label for="MM/YY">MM/YY*</label>
+                    <input
+                      type="text"
+                      id="MM/YY"
+                      class="hover"
+                      placeholder="MM/YY*"
+                      required
+                    />
+
+                    <label for="CVC">CVC*</label>
+                    <input
+                      type="text"
+                      id="CVC"
+                      class="hover"
+                      placeholder="CVC*"
+                      required
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-steps">
+              <h2>4. Your order</h2>
+              <div class="your-order">
+                <div class="total">
+                  <p><strong>Subtotal</strong></p>
+                  <p><strong>$59.99</strong></p>
+                </div>
+                <div class="total">
+                  <p>Discounts</p>
+                  <p>-$0.00</p>
+                </div>
+                <div class="total">
+                  <p>Shipping</p>
+                  <p>$3.99</p>
+                </div>
+                <div class="total">
+                  <p class="uppercase">Total</p>
+                  <p class="uppercase price">$63.98</p>
+                </div>
+              </div>
+
+              <div>
+                <a href="./confirmation.html" class="cta-button order-button"
+                  >Complete order</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
