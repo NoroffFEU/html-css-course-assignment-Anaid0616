@@ -159,7 +159,7 @@
                     placeholder="Phone Number"
                   />
                 </form>
-                <p>Use as billing address</p>
+                <p class="checkbox-billing-address">Use as billing address</p>
               </div>
             </div>
           </div>
@@ -168,9 +168,32 @@
             <div class="checkout-steps">
               <h2>3. Payment method</h2>
               <div class="paymethod">
-                <p class="underline order-top-margin">Klarna</p>
-                <p class="underline">Paypal</p>
-                <p>Pay now by card</p>
+                <div class="paymethod-wrapper">
+                  <p class="underline order-top-margin">Klarna</p>
+                  <img
+                    src="../assets/images/klarna2.png"
+                    class="paymethod-icons underline"
+                    id="klarna2"
+                    alt=""
+                  />
+                </div>
+                <div class="paymethod-wrapper">
+                  <p class="underline order-top-margin">Paypal</p>
+                  <img
+                    src="../assets/images/paypal2.png"
+                    class="paymethod-icons underline"
+                    id="paypal2"
+                    alt=""
+                  />
+                </div>
+                <div class="paymethod-wrapper">
+                  <p class="order-top-margin">Pay now by card</p>
+                  <img
+                    src="../assets/images/card.png"
+                    class="paymethod-icons paycard"
+                    alt=""
+                  />
+                </div>
                 <div class="card-form">
                   <form>
                     <label for="creditcardnumber" class="visually-hidden"
@@ -215,7 +238,7 @@
             </div>
 
             <div class="checkout-steps">
-              <h2>4. Your order</h2>
+              <h2 class="your-order-headline">4. Your order</h2>
               <div class="your-order">
                 <div class="total">
                   <p class="order-top-margin"><strong>Subtotal</strong></p>

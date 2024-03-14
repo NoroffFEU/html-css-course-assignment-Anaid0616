@@ -32,10 +32,6 @@
   padding-right: 120px;
 }
 
-.cs-button a:hover {
-  transform: scale(1.09);
-}
-
 @media screen and (max-width: 340px) {
   .cs-button {
     padding-left: 30px;

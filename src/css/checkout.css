@@ -37,6 +37,11 @@
   vertical-align: -4%;
 }
 
+.card-form {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 .form-details-wrapper {
   display: flex;
   gap: 10px;
@@ -46,24 +51,63 @@
   flex: 1;
 }
 
+.checkbox-billing-address {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.your-order-headline {
+  margin-top: 40px;
+}
+
+.your-order {
+  margin-bottom: 40px;
+}
+
 .order-button {
   border-radius: 5px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 25%;
+  padding-right: 25%;
+  text-transform: uppercase;
 }
 
 .order-top-margin {
-  margin-top: 0;
+  margin-top: 4px;
 }
 
 .underline {
   border-bottom: 1px solid white;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.paymethod-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paymethod-icons {
+  width: 38px;
+}
+
+#klarna2 {
+  margin-top: -31px;
+}
+
+#paypal2 {
+  margin-top: -30px;
+}
+
+.paycard {
+  height: 32px;
+  margin-top: -20px;
 }
 
 .total {
   display: flex;
   justify-content: space-between;
+  line-height: 12px;
 }
 
 .uppercase {
@@ -71,6 +115,7 @@
   font-weight: 501;
   border-top: solid 1px white;
   padding-top: 10px;
+  margin-bottom: 11px;
   width: 100%;
 }
 
@@ -101,5 +146,12 @@
 
   .orderinfo-container {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .order-button {
+    padding-left: 16%;
+    padding-right: 16%;
   }
 }
