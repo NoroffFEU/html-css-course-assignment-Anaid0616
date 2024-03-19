@@ -40,7 +40,7 @@
     <main>
       <section class="headline contact-checkout">
         <p class="go-back">
-          <a href="./games.html">< Back to shop</a>
+          <a href="../html/games.html">< Back to shop</a>
         </p>
         <h1>Checkout</h1>
       </section>
@@ -49,24 +49,41 @@
         <div class="checkout-steps">
           <h2>1. Your Cart</h2>
           <div class="cart-wrapper">
-            <div>
-              <img
-                src="../assets/images/cyberpunkcover.jpg"
-                class="checkout-img shadow"
-                alt=""
-              />
-            </div>
-            <div>
-              <p>Item</p>
-              <h3>Cyberpunk</h3>
-              <p>PC, action, role-playing</p>
+            <div class="img-title">
+              <div>
+                <img
+                  src="../assets/images/cyberpunkcover.jpg"
+                  class="checkout-img shadow"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p>Item</p>
+                <h3>Cyberpunk</h3>
+                <p>PC, action, role-playing</p>
+              </div>
             </div>
             <div>
               <p>Price</p>
               <p>$59.99</p>
             </div>
-            <div><p>Quantity</p></div>
-            <div><p>Total</p></div>
+            <div>
+              <p>Quantity</p>
+              <div class="quantity">
+                <img src="../assets/images/minus.png" class="remove" alt="" />
+                <p>0</p>
+                <img src="../assets/images/plus.png" class="remove" alt="" />
+              </div>
+            </div>
+            <div>
+              <p>Total</p>
+              <p>$59.99</p>
+            </div>
+            <img
+              src="../assets/images/remove.png"
+              class="remove remove-top"
+              alt=""
+            />
           </div>
         </div>
 
@@ -159,7 +176,13 @@
                     placeholder="Phone Number"
                   />
                 </form>
-                <p class="checkbox-billing-address">Use as billing address</p>
+                <div class="checkbox-flex">
+                  <label class="check-billing">
+                    <input type="checkbox" checked="checked" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <p class="checkbox-billing-address">Use as billing address</p>
+                </div>
               </div>
             </div>
           </div>
@@ -168,26 +191,46 @@
             <div class="checkout-steps">
               <h2>3. Payment method</h2>
               <div class="paymethod">
-                <div class="paymethod-wrapper">
-                  <p class="underline order-top-margin">Klarna</p>
-                  <img
-                    src="../assets/images/klarna2.png"
-                    class="paymethod-icons underline"
-                    id="klarna2"
-                    alt=""
-                  />
+                <div class="paymethod-wrapper underline">
+                  <div class="checkbox-pay">
+                    <label class="container">
+                      <input type="checkbox" checked="checked" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <p class="order-top-margin">Klarna</p>
+                  </div>
+                  <div>
+                    <img
+                      src="../assets/images/klarna2.png"
+                      class="paymethod-icons"
+                      id="klarna2"
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div class="paymethod-wrapper">
-                  <p class="underline order-top-margin">Paypal</p>
+                <div class="paymethod-wrapper underline">
+                  <div class="checkbox-pay">
+                    <label class="container">
+                      <input type="checkbox" checked="checked" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <p class="order-top-margin">Paypal</p>
+                  </div>
                   <img
                     src="../assets/images/paypal2.png"
-                    class="paymethod-icons underline"
+                    class="paymethod-icons"
                     id="paypal2"
                     alt=""
                   />
                 </div>
                 <div class="paymethod-wrapper">
-                  <p class="order-top-margin">Pay now by card</p>
+                  <div class="checkbox-pay">
+                    <label class="container">
+                      <input type="checkbox" checked="checked" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <p class="order-top-margin">Pay now by card</p>
+                  </div>
                   <img
                     src="../assets/images/card.png"
                     class="paymethod-icons paycard"
@@ -259,7 +302,9 @@
               </div>
 
               <div>
-                <a href="./confirmation.html" class="cta-button order-button"
+                <a
+                  href="./confirmation/index.html"
+                  class="cta-button order-button"
                   >Complete order</a
                 >
               </div>

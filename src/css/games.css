@@ -75,12 +75,6 @@ h3 {
   border-radius: 5px;
 }
 
-.shadow {
-  box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
-  -moz-box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
-}
-
 @media screen and (min-width: 300px) and (max-width: 800px) {
   .product-list {
     grid-template-columns: repeat(1, 1fr);
