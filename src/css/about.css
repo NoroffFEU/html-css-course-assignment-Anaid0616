@@ -40,7 +40,7 @@
 .about-img2 {
   max-width: 48%;
   border-radius: 20px;
-  margin-top: -30px;
+  margin-top: -20px;
 }
 
 .about-img3 {
@@ -102,18 +102,13 @@
     margin-left: 5px;
     margin-top: 5%;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     line-height: 2;
   }
 
   .about-img1 {
     margin-top: -20px;
-    margin-left: 30%;
-  }
-
-  .about-img2 {
-    margin-top: -20px;
-    margin-right: 260px;
+    margin-left: 40%;
   }
 }
 
@@ -156,7 +151,7 @@
 
   .about-img1 {
     margin-top: -20px;
-    margin-left: 30%;
+    margin-left: 40%;
   }
 
   .about-img2 {
