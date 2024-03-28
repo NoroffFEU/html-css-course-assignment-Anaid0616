@@ -46,7 +46,7 @@ header {
   width: 42px;
   height: 32px;
   padding-left: 10px;
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .hamburger-icon {
@@ -92,7 +92,16 @@ header {
   text-decoration: underline;
 }
 
-/* index */
+.show-menu {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 .cta-button {
   background-image: linear-gradient(to bottom, #82017f, #df06a6);
@@ -122,7 +131,11 @@ header {
   -moz-box-shadow: 1px 1px 1px 1px rgba(186, 185, 185, 0.81);
 }
 
-/* about */
+/* contact, checkout */
+
+.hover:hover {
+  border: 3px solid #000;
+}
 
 /* games, about, product */
 
@@ -370,6 +383,9 @@ footer {
   .header label {
     display: none;
   }
+
+  .cart {
+    margin-right: 60px;
 }
 
 @media screen and (min-width: 601px) and (max-width: 700px) {

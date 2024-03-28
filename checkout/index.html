@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
+    <meta name="description" content="Complete your gaming experience with ease at Game Hub's checkout page. Seamlessly purchase your favorite PC and video games with confidence, knowing that your transactions are secure. With simple navigation and hassle-free payment options, finalize your order swiftly and embark on your next gaming adventure in no time." />
     <title>Checkout Game Hub</title>
     <link rel="stylesheet" href="../src/css/checkout.css" />
     <script
@@ -15,14 +15,19 @@
     <header>
       <section class="header">
         <input type="checkbox" id="checkbox-menu" />
-        <label for="checkbox-menu" class="hamburger-icon"
-          ><i class="fas fa-bars" aria-hidden="true"></i
+        <label
+          for="checkbox-menu"
+          class="hamburger-icon"
+          aria-label="Show menu"
+        >
+          <span class="show-menu">Show menu</span>
+          <i class="fas fa-bars" aria-hidden="true"></i
         ></label>
         <a href="../index.html">
           <img
             src="../assets/images/gamehublogo.png"
             class="logo"
-            alt="logo game hub"
+            alt="Game Hub Logo Icon - Navigate to Game Hub's Homepage"
           />
         </a>
         <nav class="header-menu">
@@ -33,7 +38,7 @@
             <li><a href=".././html/contact.html">Contact</a></li>
           </ul>
         </nav>
-        <img src="../assets/images/cart.png" class="cart" alt="cart icon" />
+        <img src="../assets/images/cart.png" class="cart" alt="Shopping Cart Icon - Access Your Shopping Cart" />
       </section>
     </header>
 
@@ -172,7 +177,7 @@
                   <label for="State">State*</label>
                   <input
                     type="text"
-                    id="state"
+                    id="State"
                     class="hover"
                     placeholder="State"
                     required
@@ -199,6 +204,8 @@
                   <label class="check-billing">
                     <input type="checkbox" checked="checked" />
                     <span class="checkmark"></span>
+                    <span class="visually-hidden">Check if billing address is the same as shipping address</span>
+                  </label>
                   </label>
                   <p class="checkbox-billing-address">Use as billing address</p>
                 </div>
@@ -215,6 +222,8 @@
                     <label class="container">
                       <input type="checkbox" checked="checked" />
                       <span class="checkmark"></span>
+                      <span class="visually-hidden">Check if you would like to pay with klarna</span>
+                    </label>
                     </label>
                     <p class="order-top-margin">Klarna</p>
                   </div>
@@ -232,6 +241,8 @@
                     <label class="container">
                       <input type="checkbox" checked="checked" />
                       <span class="checkmark"></span>
+                      <span class="visually-hidden">Check if you would like to pay with Paypal</span>
+                    </label>
                     </label>
                     <p class="order-top-margin">Paypal</p>
                   </div>
@@ -247,6 +258,8 @@
                     <label class="container">
                       <input type="checkbox" checked="checked" />
                       <span class="checkmark"></span>
+                      <span class="visually-hidden">Check if you would like to pay with card</span>
+                    </label>
                     </label>
                     <p class="order-top-margin">Pay now by card</p>
                   </div>

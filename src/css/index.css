@@ -223,12 +223,14 @@
 
 /* media queries */
 
-@media screen and (max-width: 280px) and (max-width: 357px) {
+@media screen and (max-width: 357px) {
   .games-container {
-    max-width: 40px;
-    height: 150px;
+    min-width: 90px;
+    height: 140px;
   }
+}
 
+@media screen and (min-width: 280px) and (max-width: 357px) {
   .games-box {
     max-width: 340px;
   }
@@ -241,11 +243,11 @@
   }
 
   .credit-content .arrows {
-    max-width: 100px;
+    max-width: 90px;
   }
 }
 
-@media screen and (min-width: 200px) and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .extra-credit h1 {
     font-size: 1.75rem;
     margin-right: 37px;
