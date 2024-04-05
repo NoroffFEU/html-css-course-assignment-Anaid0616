@@ -177,12 +177,6 @@ header {
   padding-left: 20px;
 }
 
-/* index, product, checkout, confirmation */
-
-.footer .margin {
-  margin-top: 40px;
-}
-
 /* footer */
 
 footer {
@@ -336,7 +330,7 @@ footer {
   display: flex;
   justify-content: right;
   align-items: flex-end;
-  margin-top: 5%;
+  margin-top: 9%;
 }
 
 .copy-container {
