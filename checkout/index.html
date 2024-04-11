@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Complete your gaming experience with ease at Game Hub's checkout page. Seamlessly purchase your favorite PC and video games with confidence, knowing that your transactions are secure. With simple navigation and hassle-free payment options, finalize your order swiftly and embark on your next gaming adventure in no time." />
     <title>Checkout | Game Hub</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="../src/css/checkout.css" />
     <script
       src="https://kit.fontawesome.com/e9ab0044c8.js"
@@ -202,7 +220,7 @@
                 </form>
                 <div class="checkbox-flex">
                   <label class="check-billing">
-                    <input type="checkbox" checked="checked" />
+                    <input type="checkbox" name="checkbox" />
                     <span class="checkmark"></span>
                     <span class="visually-hidden">Check if billing address is the same as shipping address</span>
                   </label>
@@ -220,7 +238,7 @@
                 <div class="paymethod-wrapper underline">
                   <div class="checkbox-pay">
                     <label class="container">
-                      <input type="checkbox" checked="checked" />
+                      <input type="radio" name="radio" />
                       <span class="checkmark"></span>
                       <span class="visually-hidden">Check if you would like to pay with klarna</span>
                     </label>
@@ -239,7 +257,7 @@
                 <div class="paymethod-wrapper underline">
                   <div class="checkbox-pay">
                     <label class="container">
-                      <input type="checkbox" checked="checked" />
+                      <input type="radio" name="radio" />
                       <span class="checkmark"></span>
                       <span class="visually-hidden">Check if you would like to pay with Paypal</span>
                     </label>
@@ -256,7 +274,7 @@
                 <div class="paymethod-wrapper">
                   <div class="checkbox-pay">
                     <label class="container">
-                      <input type="checkbox" checked="checked" />
+                      <input type="radio" name="radio" />
                       <span class="checkmark"></span>
                       <span class="visually-hidden">Check if you would like to pay with card</span>
                     </label>
