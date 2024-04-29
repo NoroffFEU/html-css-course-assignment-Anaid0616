@@ -1,8 +1,5 @@
+@import url("./style.css");
 /* Use import to split up your CSS into manageable chunks */
-@import url("./reset.css");
-/* Files that are only needed to be imported are called partials */
-/* These are marked with an underscore: */
-@import url("./variables.css");
 /* Feel free to add as many of these imports as you need */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&family=Merriweather+Sans:ital,wght@0,300;0,400;1,300&display=swap");
 
@@ -11,6 +8,10 @@ body {
   background-color: var(--color-secondary);
   font-family: "Inter", sans-serif, Verdana;
   margin: 0;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 /* header */
@@ -90,6 +91,10 @@ header {
 
 .header-menu a:hover {
   text-decoration: underline;
+}
+
+.header-menu a:active {
+  text-decoration-color: #df06a6;
 }
 
 .show-menu {

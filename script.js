@@ -1,0 +1,73 @@
+const productListIndex = document.querySelector(".product-list-index");
+const API_URL = "https://api.noroff.dev/api/v1/gamehub";
+
+async function fetchData() {
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await response.json();
+    console.log("Fetched Data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+async function applyFilter() {
+  const selectedGenre = document.getElementById("filterSelect").value;
+  const games = await fetchData();
+
+  // Clear existing game list
+  productListIndex.innerHTML = "";
+
+  for (let i = 0; i < games.length; i++) {
+    const product = games[i];
+    const productGenre = product.genre.toLowerCase();
+
+    if (selectedGenre === "all" || productGenre === selectedGenre) {
+      displayGame(product);
+    }
+  }
+}
+
+function displayGame(product) {
+  const productDiv = document.createElement("div");
+  const backgroundDiv = document.createElement("div");
+  productDiv.classList.add("background");
+
+  const anchor = document.createElement("a");
+  anchor.href = `/product/index.html`;
+
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+
+  const image = document.createElement("img");
+  image.src = product.image;
+  image.alt = product.title;
+  image.classList.add("cover");
+
+  const title = document.createElement("h2");
+  const genre = document.createElement("p");
+  const price = document.createElement("h3");
+
+  genre.textContent = product.genre;
+  title.textContent = product.title;
+  price.textContent = product.price;
+
+  imgContainer.appendChild(image);
+  backgroundDiv.appendChild(imgContainer);
+  anchor.appendChild(imgContainer);
+  backgroundDiv.appendChild(anchor);
+  productDiv.appendChild(backgroundDiv);
+  productDiv.appendChild(title);
+  productDiv.appendChild(genre);
+  productDiv.appendChild(price);
+
+  productListIndex.appendChild(productDiv);
+}
+
+document.getElementById("filterSelect").addEventListener("change", applyFilter);
+
+applyFilter();

@@ -1,4 +1,4 @@
-@import url("./global.css");
+@import url("./style.css");
 
 .product-list {
   display: grid;
@@ -14,12 +14,12 @@
   text-decoration: none;
 }
 
-.product-content {
+.products-content {
   display: flex;
   justify-content: center;
 }
 
-.product-content:hover {
+.products-content:hover {
   transform: scale(1.01);
 }
 
@@ -38,15 +38,14 @@
   display: inline-block;
 }
 
-.background h2,
-h3 {
+.background h2 {
   text-align: left;
-  margin-left: 40px;
 }
 
 .background h2 {
   font-size: 1.25rem;
   margin-bottom: -13px;
+  margin-left: 40px;
 }
 
 .background p {
@@ -59,6 +58,7 @@ h3 {
   padding-top: 2px;
   padding-bottom: 25px;
   margin-bottom: -5px;
+  margin-left: 40px;
 }
 
 .img-container {
@@ -75,7 +75,18 @@ h3 {
   border-radius: 5px;
 }
 
-@media screen and (min-width: 300px) and (max-width: 800px) {
+@media screen and (max-width: 377px) {
+  .background {
+    width: 280px;
+  }
+
+  .img-container {
+    height: 450px;
+    padding: 20px 20px 4px 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .product-list {
     grid-template-columns: repeat(1, 1fr);
   }

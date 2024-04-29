@@ -16,17 +16,10 @@
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="/assets/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
       sizes="16x16"
       href="/assets/images/favicon-16x16.png"
     />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <script
       src="https://kit.fontawesome.com/e9ab0044c8.js"
       crossorigin="anonymous"
@@ -44,7 +37,7 @@
           <span class="show-menu">Show menu</span>
           <i class="fas fa-bars" aria-hidden="true"></i
         ></label>
-        <a href="index.html">
+        <a href="/">
           <img
             src="./assets/images/gamehublogo.png"
             class="logo"
@@ -222,6 +215,24 @@
           </a>
         </div>
       </section>
+
+      <section>
+        <h2 class="game-headline">Games: Playbox</h2>
+
+        <label for="filterSelect" class="visually-hidden"
+          >Choose a filter:</label
+        >
+        <p id="selectedOption"></p>
+        <select id="filterSelect" onchange="applyFilter()">
+          <option value="all">All</option>
+          <option value="horror">Horror</option>
+          <option value="action">Adventures</option>
+          <option value="horror">Sports</option>
+          <option value="action">Action</option>
+        </select>
+
+        <div class="product-list-index"></div>
+      </section>
     </main>
 
     <footer>
@@ -325,6 +336,6 @@
         </div>
       </section>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
