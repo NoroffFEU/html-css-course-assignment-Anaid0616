@@ -19,9 +19,10 @@ async function applyFilter() {
   const selectedGenre = document.getElementById("filterSelect").value;
   const games = await fetchData();
 
-  // Clear existing game list
+  // Clear game list
   productListIndex.innerHTML = "";
 
+  // Sort games by genre
   for (let i = 0; i < games.length; i++) {
     const product = games[i];
     const productGenre = product.genre.toLowerCase();

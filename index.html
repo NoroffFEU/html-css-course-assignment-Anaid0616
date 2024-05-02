@@ -52,11 +52,14 @@
             <li><a href="./html/contact.html">Contact</a></li>
           </ul>
         </nav>
-        <img
-          src="./assets/images/cart.png"
-          class="cart"
-          alt="Shopping Cart Icon - Access Your Shopping Cart"
-        />
+        <a href="./checkout/index.html"></a>
+          <img
+            src="./assets/images/cart.png"
+            class="cart"
+            alt="Shopping Cart Icon - Access Your Shopping Cart"
+          />
+          <span id="cart-count" class="cart-count">0</span></a
+        >
       </section>
     </header>
 
@@ -336,6 +339,7 @@
         </div>
       </section>
     </footer>
-    <script src="script.js" defer></script>
+    <script type="module" src="/js/cartcounter.mjs" defer></script>
+    <script type="module" src="/js/index.mjs" defer></script>
   </body>
 </html>

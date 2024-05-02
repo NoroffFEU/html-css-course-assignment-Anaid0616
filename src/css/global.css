@@ -47,7 +47,15 @@ header {
   width: 42px;
   height: 32px;
   padding-left: 10px;
-  margin-right: 20px;
+}
+
+.cart-count {
+  margin-right: 60px;
+  font-size: 0.8rem;
+}
+
+.count-big {
+  font-size: 1rem;
 }
 
 .hamburger-icon {
@@ -151,7 +159,7 @@ header {
 .headline h1 {
   display: inline-block;
   font-size: 1.9rem;
-  margin-bottom: 5%;
+  margin-bottom: 60px;
   background-image: linear-gradient(to right, #82017f, #df06a6);
   background-size: 100% 4px;
   background-position: 0 100%;
@@ -160,7 +168,7 @@ header {
 
 .go-back {
   text-align: left;
-  margin-left: 60px;
+  margin-left: 4%;
 }
 
 .go-back a {
@@ -367,6 +375,10 @@ footer {
   .logo {
     margin-left: 0px;
   }
+
+  .cart-count {
+    margin-right: 20px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -385,7 +397,7 @@ footer {
   }
 
   .cart {
-    margin-right: 60px;
+    margin-right: 0px;
   }
 }
 

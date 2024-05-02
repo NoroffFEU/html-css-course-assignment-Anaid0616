@@ -52,11 +52,16 @@
             <li><a href=".././html/contact.html">Contact</a></li>
           </ul>
         </nav>
-        <img
-          src="../assets/images/cart.png"
-          class="cart"
-          alt="Shopping Cart Icon - Access Your Shopping Cart"
-        />
+        <div class="cart-flex">
+          <a href="../checkout/index.html">
+            <img
+              src="../assets/images/cart.png"
+              class="cart"
+              alt="Shopping Cart Icon - Access Your Shopping Cart"
+            />
+            <span id="cart-count" class="cart-count">0</span>
+          </a>
+        </div>
       </section>
     </header>
 
@@ -83,9 +88,11 @@
             <p class="genre"></p>
             <h3></h3>
             <p class="description"></p>
-            <a href="../checkout/index.html" class="cta-button atc"
-              >Add to cart</a
-            >
+            <div class="checkout-buttons">
+              <a href="../checkout/index.html" class="cta-button atc"
+                >Add to cart</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -191,6 +198,6 @@
         </div>
       </section>
     </footer>
-    <script src="../product.js" defer></script>
+    <script type="module" src=".././js/product.mjs" defer></script>
   </body>
 </html>

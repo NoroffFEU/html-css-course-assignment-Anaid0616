@@ -215,3 +215,17 @@
     </footer>
   </body>
 </html>
+
+<!-- till gamla css
+css .product-content .part1 { padding: 0 8%; } .product-content .part2 {
+padding: 0 8% 8% 8%; }
+
+media queries
+.product-content .part1 {
+  padding: 0 40px 0 20px;
+}
+
+.product-content .part2 {
+  padding: 0 40px 40px 20px;
+}
+-->
