@@ -3,14 +3,28 @@ import { updateCartCounter } from "./cart.mjs";
 const API_SINGLE_URL = "https://static.noroff.dev/api/gamehub/8-cyberpunk.jpg";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   const cartWrapper = document.querySelector(".cart-wrapper");
 
   // Function to render cart items on the checkout page
   function renderCartItems() {
-    // cartWrapper.innerHTML = ""; // Clear existing content
+    // Clear existing content
+    cartWrapper.innerHTML = "";
 
+    // Create an object to store unique items and their quantities
+    const itemMap = {};
+
+    // Populate the itemMap with unique items and their quantities
     cartItems.forEach((item) => {
+      if (itemMap[item.id]) {
+        itemMap[item.id].quantity++;
+      } else {
+        itemMap[item.id] = { ...item, quantity: 1 };
+      }
+    });
+
+    // Render each unique item with its quantity
+    Object.values(itemMap).forEach((item) => {
       const cartItemElement = document.createElement("div");
       cartItemElement.classList.add("img-title");
 
@@ -26,25 +40,70 @@ document.addEventListener("DOMContentLoaded", function () {
       // Title
       const titleElement = document.createElement("h3");
       titleElement.textContent = item.title;
-      titleElement.classList.add("item-title");
+      titleElement.classList.add("item.title");
 
-      // Genre
       const genreElement = document.createElement("p");
       genreElement.textContent = item.genre;
       genreElement.classList.add("genre-checkout");
 
-      // Price
       const priceElement = document.createElement("p");
-      priceElement.textContent = `$${item.price.toFixed(2)}`; // Format price as needed
-      priceElement.classList.add("price-checkout");
+      priceElement.textContent = `Price: $${item.price.toFixed(2)}`;
+      priceElement.classList.add("oneItem-price");
+
+      // Quantity
+      const quantityElement = document.createElement("p");
+      quantityElement.textContent = `Quantity: ${item.quantity}`;
+      quantityElement.classList.add("quantity-checkout");
+
+      // Quantity Control Buttons
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "-";
+      removeButton.classList.add("quantity-control");
+      removeButton.addEventListener("click", () => {
+        console.log("Remove button clicked");
+        if (item.quantity > 1) {
+          item.quantity--;
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+          renderCartItems(); // Re-render to reflect quantity change
+        }
+      });
+
+      const addButton = document.createElement("button");
+      addButton.textContent = "+";
+      addButton.classList.add("quantity-control");
+      addButton.addEventListener("click", () => {
+        item.quantity++;
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        renderCartItems(); // Re-render to reflect quantity change
+      });
+
+      // Remove Button
+      const removeItemButton = document.createElement("button");
+      removeItemButton.textContent = "Remove";
+      removeItemButton.classList.add("remove-item");
+      removeItemButton.addEventListener("click", () => {
+        cartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
+        localStorage.setItem("cart", JSON.stringify(cartItems)); // Update localStorage
+        renderCartItems(); // Re-render to reflect item removal
+      });
+
+      // Total Price
+      const totalElement = document.createElement("p");
+      const totalPrice = item.price * item.quantity;
+      totalElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+      totalElement.classList.add("total-price");
 
       // Append elements to cart item container
       cartItemElement.appendChild(imgContainer);
       cartItemElement.appendChild(titleElement);
       cartItemElement.appendChild(genreElement);
       cartItemElement.appendChild(priceElement);
+      cartItemElement.appendChild(quantityElement);
+      cartItemElement.appendChild(removeButton);
+      cartItemElement.appendChild(addButton);
+      cartItemElement.appendChild(removeItemButton);
 
-      // Add other elements as needed (e.g., quantity, remove buttons)
+      cartItemElement.appendChild(totalElement);
 
       // Append cart item to cart wrapper
       cartWrapper.appendChild(cartItemElement);
