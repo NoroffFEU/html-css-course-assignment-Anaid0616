@@ -234,6 +234,11 @@
   font-size: 1rem;
 }
 
+.genretitle {
+  width: 100px;
+  height: 100px;
+}
+
 /*media queries */
 
 @media screen and (max-width: 700px) {
@@ -292,7 +297,7 @@
   }
 
   .checkout-img-content {
-    flex: 1;
+    border: 1px solid red;
   }
 }
 

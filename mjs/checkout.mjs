@@ -5,11 +5,16 @@ const API_SINGLE_URL = "https://static.noroff.dev/api/gamehub/8-cyberpunk.jpg";
 document.addEventListener("DOMContentLoaded", function () {
   let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   const cartWrapper = document.querySelector(".cart-wrapper");
+  const titleWrapper = document.querySelector(".genretitle");
+  const imgWrapper = document.querySelector(".imgWrapper");
+  const quantityCounter = document.querySelector(".cart-count");
+  quantityCounter.innerHTML = 0;
 
   // Function to render cart items on the checkout page
   function renderCartItems() {
     // Clear existing content
     cartWrapper.innerHTML = "";
+    //cartWrapper.classList.add("cart-wrapper");
 
     // Create an object to store unique items and their quantities
     const itemMap = {};
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Title
       const titleElement = document.createElement("h3");
       titleElement.textContent = item.title;
-      titleElement.classList.add("item.title");
+      titleElement.classList.add("img-title");
 
       const genreElement = document.createElement("p");
       genreElement.textContent = item.genre;
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Quantity
       const quantityElement = document.createElement("p");
-      quantityElement.textContent = `Quantity: ${item.quantity}`;
+      quantityElement.textContent = `Quantity: ${quantityCounter.innerHTML}`;
       quantityElement.classList.add("quantity-checkout");
 
       // Quantity Control Buttons
@@ -70,11 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const addButton = document.createElement("button");
       addButton.textContent = "+";
-      addButton.classList.add("quantity-control");
+      // addButton.classList.add("quantity-control");
       addButton.addEventListener("click", () => {
-        item.quantity++;
-        localStorage.setItem("cart", JSON.stringify(cartItems));
-        renderCartItems(); // Re-render to reflect quantity change
+        quantityCounter.innerHTML = +1;
+        console.log(quantityCounter.innerHTML);
+        // localStorage.setItem("cart", JSON.stringify(cartItems));
+        // renderCartItems(); // Re-render to reflect quantity change
       });
 
       // Remove Button
@@ -94,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       totalElement.classList.add("total-price");
 
       // Append elements to cart item container
-      cartItemElement.appendChild(imgContainer);
+
       cartItemElement.appendChild(titleElement);
       cartItemElement.appendChild(genreElement);
       cartItemElement.appendChild(priceElement);
@@ -104,9 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItemElement.appendChild(removeItemButton);
 
       cartItemElement.appendChild(totalElement);
-
+      imgWrapper.appendChild(imgContainer);
       // Append cart item to cart wrapper
+      cartWrapper.appendChild(imgWrapper);
+      cartWrapper.appendChild(titleWrapper);
       cartWrapper.appendChild(cartItemElement);
+      titleWrapper.appendChild(titleElement);
+      titleWrapper.appendChild(genreElement);
     });
 
     // Update total price
