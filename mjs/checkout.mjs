@@ -89,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
           // Update localStorage with the updated cartItems array
           localStorage.setItem("cart", JSON.stringify(cartItems));
 
-          // Re-render cart items to reflect the changes
           renderCartItems();
         }
       }
