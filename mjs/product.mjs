@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   try {
     const response = await fetch(`${API_URL}/${productId}`);
     const product = await response.json();
-    console.log(product);
 
     const productTitle = document.querySelector(".product-content h2");
     const productGenre = document.querySelector(".product-content .genre");
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     productImage.alt = product.title;
 
     addToCartButton.textContent = "Add to cart";
-    console.log("add to cart");
+
     addToCartButton.href = `javascript:void(0);`;
 
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];

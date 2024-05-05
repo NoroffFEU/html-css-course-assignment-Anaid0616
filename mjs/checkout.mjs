@@ -12,14 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to render cart items on the checkout page
   function renderCartItems() {
-    // Clear existing content
     cartWrapper.innerHTML = "";
     cartWrapper.classList.add("cart-wrapper");
 
-    // Create an object to store unique items and their quantities
     const itemMap = {};
 
-    // Populate the itemMap with unique items and their quantities
     cartItems.forEach((item) => {
       if (itemMap[item.id]) {
         itemMap[item.id].quantity++;
@@ -28,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Render each unique item with its quantity
     Object.values(itemMap).forEach((item) => {
       const cartItemElement = document.createElement("div");
       cartItemElement.classList.add("img-title");
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeButton.addEventListener("click", () => {
         if (item.quantity > 1) {
           item.quantity--;
-          updateCartItem(item); // Re-render to reflect quantity change
+          updateCartItem(item);
         }
       });
 
@@ -76,12 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
       addButton.classList.add("quantity-control");
       addButton.addEventListener("click", () => {
         item.quantity++;
-        updateCartItem(item); // Re-render to reflect quantity change
+        updateCartItem(item);
       });
 
-      // Function to update cart item in the cartItems array and localStorage
+      // Function to update cart item
       function updateCartItem(updatedItem) {
-        // Find the index of the item to update in the cartItems array
+        // Find item to update in the cartItems array
         const index = cartItems.findIndex(
           (cartItem) => cartItem.id === updatedItem.id
         );
@@ -104,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
       removeItemButton.classList.add("remove-item");
       removeItemButton.addEventListener("click", () => {
         cartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
-        localStorage.setItem("cart", JSON.stringify(cartItems)); // Update localStorage
-        renderCartItems(); // Re-render to reflect item removal
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        renderCartItems();
       });
 
       // Total Price
@@ -115,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
       totalElement.classList.add("total-price");
 
       // Append elements to cart item container
-
       cartItemElement.appendChild(titleElement);
       cartItemElement.appendChild(genreElement);
       cartItemElement.appendChild(priceElement);
@@ -126,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       cartItemElement.appendChild(totalElement);
       imgWrapper.appendChild(imgContainer);
-      // Append cart item to cart wrapper
       cartWrapper.appendChild(imgWrapper);
       cartWrapper.appendChild(titleWrapper);
       cartWrapper.appendChild(cartItemElement);

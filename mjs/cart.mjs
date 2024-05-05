@@ -1,5 +1,4 @@
 export function addToCart(product, cartItems) {
-  console.log("Adding product to cart:", product);
   cartItems.push(product);
   localStorage.setItem("cart", JSON.stringify(cartItems));
   updateCartCounter();

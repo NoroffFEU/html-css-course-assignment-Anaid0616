@@ -12,7 +12,6 @@ async function applyFilter() {
 
   const games = await fetchData(API_URL);
 
-  // Clear game list
   productListIndex.innerHTML = "";
 
   // Sort games by genre
@@ -26,10 +25,8 @@ async function applyFilter() {
   }
 }
 
-// Attach event listener to the <select> element
 filterSelect.addEventListener("change", applyFilter);
 
-// Call applyFilter initially to populate the game list
 applyFilter();
 
 // display games

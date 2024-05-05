@@ -10,7 +10,7 @@ export async function fetchData() {
     }
 
     const data = await response.json();
-    console.log("Fetched Data:", data);
+
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
