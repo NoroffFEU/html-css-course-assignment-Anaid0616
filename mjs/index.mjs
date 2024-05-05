@@ -40,7 +40,7 @@ function displayGame(product) {
   productDiv.classList.add("background");
 
   const anchor = document.createElement("a");
-  anchor.href = `./product/index.html`;
+  anchor.href = `../product/index.html`;
 
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");

@@ -73,7 +73,7 @@
 }
 
 .remove-item {
-  margin-top: 15px;
+  margin-top: 0px;
   max-height: 30px;
   border-radius: 5px;
 }
@@ -289,14 +289,23 @@
 }
 
 @media screen and (min-width: 350px) {
-  .img-title {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-  }
 }
 
 @media screen and (min-width: 701px) {
+  .img-title {
+    display: flex;
+    gap: 20px;
+    width: 76%;
+  }
+
+  .remove-item {
+    margin-top: 15px;
+  }
+
+  .genretitle {
+    margin-left: 20px;
+  }
+
   .cart-wrapper {
     display: flex;
     justify-content: space-between;

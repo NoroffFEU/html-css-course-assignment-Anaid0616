@@ -60,10 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
       removeButton.textContent = "-";
       removeButton.classList.add("quantity-control");
       removeButton.addEventListener("click", () => {
-        console.log("Remove button clicked");
         if (item.quantity > 1) {
           item.quantity--;
-          localStorage.setItem("cart", JSON.stringify(cartItems));
           updateCartItem(item); // Re-render to reflect quantity change
         }
       });
@@ -78,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
       addButton.classList.add("quantity-control");
       addButton.addEventListener("click", () => {
         item.quantity++;
-        console.log("Add button clicked");
         updateCartItem(item); // Re-render to reflect quantity change
       });
 
