@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderCartItems() {
     // Clear existing content
     cartWrapper.innerHTML = "";
-    //cartWrapper.classList.add("cart-wrapper");
+    cartWrapper.classList.add("cart-wrapper");
 
     // Create an object to store unique items and their quantities
     const itemMap = {};
@@ -55,11 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
       priceElement.textContent = `Price: $${item.price.toFixed(2)}`;
       priceElement.classList.add("oneItem-price");
 
-      // Quantity
-      const quantityElement = document.createElement("p");
-      quantityElement.textContent = `Quantity: ${quantityCounter.innerHTML}`;
-      quantityElement.classList.add("quantity-checkout");
-
       // Quantity Control Buttons
       const removeButton = document.createElement("button");
       removeButton.textContent = "-";
@@ -69,19 +64,42 @@ document.addEventListener("DOMContentLoaded", function () {
         if (item.quantity > 1) {
           item.quantity--;
           localStorage.setItem("cart", JSON.stringify(cartItems));
-          renderCartItems(); // Re-render to reflect quantity change
+          updateCartItem(item); // Re-render to reflect quantity change
         }
       });
 
+      // Quantity
+      const quantityElement = document.createElement("p");
+      quantityElement.textContent = `Quantity: ${item.quantity}`;
+      quantityElement.classList.add("quantity-checkout");
+
       const addButton = document.createElement("button");
       addButton.textContent = "+";
-      // addButton.classList.add("quantity-control");
+      addButton.classList.add("quantity-control");
       addButton.addEventListener("click", () => {
-        quantityCounter.innerHTML = +1;
-        console.log(quantityCounter.innerHTML);
-        // localStorage.setItem("cart", JSON.stringify(cartItems));
-        // renderCartItems(); // Re-render to reflect quantity change
+        item.quantity++;
+        console.log("Add button clicked");
+        updateCartItem(item); // Re-render to reflect quantity change
       });
+
+      // Function to update cart item in the cartItems array and localStorage
+      function updateCartItem(updatedItem) {
+        // Find the index of the item to update in the cartItems array
+        const index = cartItems.findIndex(
+          (cartItem) => cartItem.id === updatedItem.id
+        );
+
+        if (index !== -1) {
+          // Update the item in the cartItems array
+          cartItems[index].quantity = updatedItem.quantity;
+
+          // Update localStorage with the updated cartItems array
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+
+          // Re-render cart items to reflect the changes
+          renderCartItems();
+        }
+      }
 
       // Remove Button
       const removeItemButton = document.createElement("button");
@@ -104,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItemElement.appendChild(titleElement);
       cartItemElement.appendChild(genreElement);
       cartItemElement.appendChild(priceElement);
-      cartItemElement.appendChild(quantityElement);
       cartItemElement.appendChild(removeButton);
+      cartItemElement.appendChild(quantityElement);
       cartItemElement.appendChild(addButton);
       cartItemElement.appendChild(removeItemButton);
 

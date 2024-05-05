@@ -1,23 +1,16 @@
+import { showLoader, hideLoader } from "./loader.mjs";
+import { fetchData } from "./fetchData.mjs";
+import { API_URL } from "./constants.mjs";
+
+// index html
 const productListIndex = document.querySelector(".product-list-index");
-const API_URL = "https://api.noroff.dev/api/v1/gamehub";
+const filterSelect = document.getElementById("filterSelect");
 
-async function fetchData() {
-  try {
-    const response = await fetch(API_URL);
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    const data = await response.json();
-    console.log("Fetched Data:", data);
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}
-
+// Filter
 async function applyFilter() {
   const selectedGenre = document.getElementById("filterSelect").value;
-  const games = await fetchData();
+
+  const games = await fetchData(API_URL);
 
   // Clear game list
   productListIndex.innerHTML = "";
@@ -33,13 +26,21 @@ async function applyFilter() {
   }
 }
 
+// Attach event listener to the <select> element
+filterSelect.addEventListener("change", applyFilter);
+
+// Call applyFilter initially to populate the game list
+applyFilter();
+
+// display games
 function displayGame(product) {
   const productDiv = document.createElement("div");
+
   const backgroundDiv = document.createElement("div");
   productDiv.classList.add("background");
 
   const anchor = document.createElement("a");
-  anchor.href = `./product/index.html`;
+  anchor.href = `../product/index.html?id=${product.id}`;
 
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");
@@ -68,7 +69,3 @@ function displayGame(product) {
 
   productListIndex.appendChild(productDiv);
 }
-
-document.getElementById("filterSelect").addEventListener("change", applyFilter);
-
-applyFilter();

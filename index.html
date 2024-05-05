@@ -220,11 +220,6 @@
       </section>
 
       <section>
-        <div id="loader">
-          <div class="progress">
-            <div class="indeterminate"></div>
-          </div>
-        </div>
 
         <h2 class="game-headline">Games: Playbox</h2>
 
@@ -232,14 +227,14 @@
           >Choose a filter:</label
         >
         <p id="selectedOption"></p>
-        <select id="filterSelect" onchange="applyFilter()">
+        <select id="filterSelect">
           <option value="all">All</option>
           <option value="horror">Horror</option>
-          <option value="action">Adventures</option>
-          <option value="horror">Sports</option>
+          <option value="sports">Sports</option>
           <option value="action">Action</option>
         </select>
-
+        
+        <div class="loader"></div>
         <div class="product-list-index"></div>
       </section>
     </main>
@@ -346,6 +341,7 @@
       </section>
     </footer>
     <script type="module" src="./mjs/cartcounter.mjs" defer></script>
+  </script>
     <script type="module" src="./mjs/index.mjs" defer></script>
   </body>
 </html>

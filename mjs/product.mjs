@@ -1,8 +1,10 @@
 import { addToCart, updateCartCounter } from "./cart.mjs";
+import { fetchData } from "./fetchData.mjs";
+import { API_URL } from "./constants.mjs";
+import { showLoader } from "./loader.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const productId = "cac3b2cd-1611-4007-9883-3adf6f74948f";
-  const API_URL = "https://api.noroff.dev/api/v1/gamehub";
   const API_SINGLE_URL =
     "https://static.noroff.dev/api/gamehub/8-cyberpunk.jpg";
 
