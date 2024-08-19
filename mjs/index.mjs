@@ -1,6 +1,6 @@
 import { showLoader, hideLoader } from "./loader.mjs";
 import { fetchData } from "./fetchData.mjs";
-import { API_URL } from "./constants.mjs";
+import { API_BASE_URL } from "./constants.mjs";
 
 // index html
 const productListIndex = document.querySelector(".product-list-index");
@@ -10,7 +10,7 @@ const filterSelect = document.getElementById("filterSelect");
 async function applyFilter() {
   const selectedGenre = document.getElementById("filterSelect").value;
 
-  const games = await fetchData(API_URL);
+  const games = await fetchData(API_BASE_URL);
 
   productListIndex.innerHTML = "";
 
@@ -37,7 +37,7 @@ function displayGame(product) {
   productDiv.classList.add("background");
 
   const anchor = document.createElement("a");
-  anchor.href = `../product/index.html`;
+  anchor.href = `../product/index.html?id=${product.id}`;
 
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");

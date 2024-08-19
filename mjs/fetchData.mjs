@@ -1,10 +1,9 @@
-import { API_URL } from "./constants.mjs";
 import { hideLoader, showLoader } from "./loader.mjs";
 
-export async function fetchData() {
+export async function fetchData(url) {
   try {
     showLoader();
-    const response = await fetch(API_URL);
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }

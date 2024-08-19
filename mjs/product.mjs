@@ -1,16 +1,20 @@
 import { addToCart, updateCartCounter } from "./cart.mjs";
+import { API_BASE_URL } from "./constants.mjs";
 import { fetchData } from "./fetchData.mjs";
-import { API_URL } from "./constants.mjs";
-import { showLoader } from "./loader.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const productId = "cac3b2cd-1611-4007-9883-3adf6f74948f";
-  const API_SINGLE_URL =
-    "https://static.noroff.dev/api/gamehub/8-cyberpunk.jpg";
-
   try {
-    const response = await fetch(`${API_URL}/${productId}`);
-    const product = await response.json();
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+
+    if (!productId) {
+      console.error("No product ID found in URL");
+      return;
+    }
+
+    const product = await fetchData(`${API_BASE_URL}/${productId}`);
+
+    console.log(product);
 
     const productTitle = document.querySelector(".product-content h2");
     const productGenre = document.querySelector(".product-content .genre");
@@ -25,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     productGenre.textContent = product.genre;
     productPrice.textContent = product.price;
     productDescription.textContent = product.description;
-    productImage.src = API_SINGLE_URL;
+    productImage.src = product.image;
     productImage.alt = product.title;
 
     addToCartButton.textContent = "Add to cart";

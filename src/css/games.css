@@ -14,12 +14,7 @@
   text-decoration: none;
 }
 
-.products-content {
-  display: flex;
-  justify-content: center;
-}
-
-.products-content:hover {
+.product-content:hover {
   transform: scale(1.01);
 }
 
@@ -29,7 +24,7 @@
   border-radius: 10px;
 }
 
-.products h1 {
+.product h1 {
   margin-bottom: 60px;
   background-image: linear-gradient(to right, #82017f, #df06a6);
   background-size: 100% 4px;
