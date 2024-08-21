@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             localStorage.setItem("cart", JSON.stringify(cartItems));
 
             renderCartItems();
+            // Update total price
+            updateTotalPrice();
           }
         }
 
@@ -107,6 +109,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           cartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
           localStorage.setItem("cart", JSON.stringify(cartItems));
           renderCartItems();
+          updateTotalPrice();
         });
 
         // Total Price
@@ -133,13 +136,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         titleWrapper.appendChild(genreElement);
       });
 
+      // Update total quantity in cart counter
+      quantityCounter.innerHTML = totalQuantity;
+
       // Update total price
       updateTotalPrice();
     }
 
     // Function to calculate and display total price
     function updateTotalPrice() {
-      const totalPriceElement = document.querySelector(".price");
+      const totalPriceElement = document.querySelector(".total-price");
       const totalPrice = cartItems.reduce(
         (total, item) => total + item.price,
         0
