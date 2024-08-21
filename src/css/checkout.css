@@ -7,7 +7,7 @@
 }
 
 .checkout-img {
-  height: 160px;
+  height: 140px;
 }
 
 .genre-checkout {
@@ -16,7 +16,7 @@
   font-weight: 200;
 }
 
-.cart-wrapper,
+#cart-container,
 .form-border,
 .paymethod,
 .your-order {
@@ -62,9 +62,9 @@
 }
 
 .quantity-control {
-  display: none;
   margin-top: 15px;
   max-height: 30px;
+  max-width: 22px;
   border-radius: 5px;
 }
 
@@ -293,7 +293,12 @@
 
 @media screen and (min-width: 701px) {
   .img-title {
+    width: 76%;
+  }
+
+  .item-info {
     display: flex;
+    justify-content: space-around;
     gap: 20px;
     width: 76%;
   }
@@ -302,7 +307,7 @@
     margin-top: 15px;
   }
 
-  .genretitle {
+  .genre-title {
     margin-left: 20px;
   }
 

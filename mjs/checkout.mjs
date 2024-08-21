@@ -6,23 +6,20 @@ document.addEventListener("DOMContentLoaded", async function () {
   try {
     // Retrieve cart items from localStorage
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartWrapper = document.querySelector(".cart-wrapper");
-    const titleWrapper = document.querySelector(".genretitle");
-    const imgWrapper = document.querySelector(".imgWrapper");
+    const cartContainer = document.getElementById("cart-container");
     const quantityCounter = document.querySelector(".cart-count");
 
     let totalQuantity = 0;
 
     // Function to render cart items on the checkout page
     function renderCartItems() {
-      cartWrapper.innerHTML = "";
-      imgWrapper.innerHTML = "";
-      titleWrapper.innerHTML = "";
+      cartContainer.innerHTML = "";
 
       const itemMap = {};
 
       //Group items by ID and count
       cartItems.forEach((item) => {
+        console.log(item);
         totalQuantity += item.quantity;
         if (itemMap[item.id]) {
           itemMap[item.id].quantity += item.quantity;
@@ -32,8 +29,17 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
 
       Object.values(itemMap).forEach((item) => {
+        const cartWrapper = document.createElement("div");
+        cartWrapper.classList.add("cart-wrapper");
+
+        const imgWrapper = document.createElement("div");
+        imgWrapper.classList.add("imgWrapper");
+
+        const titleWrapper = document.createElement("div");
+        titleWrapper.classList.add("genre-title");
+
         const cartItemElement = document.createElement("div");
-        cartItemElement.classList.add("img-title");
+        cartItemElement.classList.add("item-info");
 
         // Image
         const imgContainer = document.createElement("div");
@@ -122,11 +128,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         cartItemElement.appendChild(titleElement);
         cartItemElement.appendChild(genreElement);
         cartItemElement.appendChild(priceElement);
-        cartItemElement.appendChild(removeButton);
+
         cartItemElement.appendChild(quantityElement);
+        cartItemElement.appendChild(removeButton);
         cartItemElement.appendChild(addButton);
         cartItemElement.appendChild(removeItemButton);
-
         cartItemElement.appendChild(totalElement);
         imgWrapper.appendChild(imgContainer);
         cartWrapper.appendChild(imgWrapper);
@@ -134,6 +140,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         cartWrapper.appendChild(cartItemElement);
         titleWrapper.appendChild(titleElement);
         titleWrapper.appendChild(genreElement);
+        cartContainer.appendChild(cartWrapper);
       });
 
       // Update total quantity in cart counter
@@ -150,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         (total, item) => total + item.price,
         0
       );
-      totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+      totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
     }
 
     // Initial rendering of cart items
