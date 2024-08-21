@@ -4,35 +4,30 @@ import { fetchData } from "./fetchData.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    const urlParams = new URLSearchParams(window.location.search);
-    const itemId = urlParams.get("id");
-
-    if (!itemId) {
-      console.error("No product ID found in URL");
-      return;
-    }
-
+    // Retrieve cart items from localStorage
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     const cartWrapper = document.querySelector(".cart-wrapper");
     const titleWrapper = document.querySelector(".genretitle");
     const imgWrapper = document.querySelector(".imgWrapper");
     const quantityCounter = document.querySelector(".cart-count");
-    quantityCounter.innerHTML = 0;
 
-    const item = await fetchData(`${API_BASE_URL}/${itemId}`);
+    let totalQuantity = 0;
 
     // Function to render cart items on the checkout page
     function renderCartItems() {
       cartWrapper.innerHTML = "";
-      cartWrapper.classList.add("cart-wrapper");
+      imgWrapper.innerHTML = "";
+      titleWrapper.innerHTML = "";
 
       const itemMap = {};
 
+      //Group items by ID and count
       cartItems.forEach((item) => {
+        totalQuantity += item.quantity;
         if (itemMap[item.id]) {
-          itemMap[item.id].quantity++;
+          itemMap[item.id].quantity += item.quantity;
         } else {
-          itemMap[item.id] = { ...item, quantity: 1 };
+          itemMap[item.id] = { ...item };
         }
       });
 
@@ -45,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         imgContainer.classList.add("checkout-img-container");
         const itemImage = document.createElement("img");
         itemImage.src = item.image;
-        itemImage.alt = item.title;
+        itemImage.alt = item.description;
         itemImage.classList.add("checkout-img");
         imgContainer.appendChild(itemImage);
 
