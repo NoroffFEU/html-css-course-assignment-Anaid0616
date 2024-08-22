@@ -84,33 +84,33 @@ function generateCartItemHtml(item) {
   priceElement.textContent = `Price: $${item.price.toFixed(2)}`;
   priceElement.classList.add("oneItem-price");
 
-  // Quantity Control Buttons
-  const removeButton = document.createElement("button");
-  removeButton.textContent = "-";
-  removeButton.classList.add("quantity-control");
-  removeButton.addEventListener("click", () => {
-    console.log("Subtract button clicked for item:", item); //
-    subtractItem(item);
-  });
-
   // Quantity
   const quantityElement = document.createElement("p");
   quantityElement.textContent = `Quantity: ${item.quantity}`;
   quantityElement.classList.add("quantity-checkout");
 
+  // Quantity Control Buttons
+  const subtractButton = document.createElement("button");
+  subtractButton.textContent = "-";
+  subtractButton.classList.add("quantity-control-subtract");
+  subtractButton.addEventListener("click", () => {
+    console.log("Subtract button clicked for item:", item); //
+    subtractItem(item);
+  });
+
   const addButton = document.createElement("button");
   addButton.textContent = "+";
-  addButton.classList.add("quantity-control");
+  addButton.classList.add("quantity-control-add");
   addButton.addEventListener("click", () => {
     console.log("Add button clicked for item:", item); // Debugging
     addItem(item);
   });
 
   // Remove Button
-  const removeItemButton = document.createElement("button");
-  removeItemButton.textContent = "Remove";
-  removeItemButton.classList.add("remove-item");
-  removeItemButton.addEventListener("click", () => {
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.classList.add("remove-item");
+  removeButton.addEventListener("click", () => {
     removeItem(item);
   });
 
@@ -125,11 +125,10 @@ function generateCartItemHtml(item) {
   cartItemElement.appendChild(genreElement);
   cartItemElement.appendChild(priceElement);
   cartItemElement.appendChild(quantityElement);
-  cartItemElement.appendChild(removeButton);
+  cartItemElement.appendChild(subtractButton);
   cartItemElement.appendChild(addButton);
-  cartItemElement.appendChild(removeItemButton);
+  cartItemElement.appendChild(removeButton);
   cartItemElement.appendChild(totalElement);
-
   imgWrapper.appendChild(imgContainer);
   cartWrapper.appendChild(imgWrapper);
   cartWrapper.appendChild(titleWrapper);

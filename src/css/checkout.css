@@ -42,29 +42,21 @@
   padding-right: 20px;
 }
 
-.remove {
-  margin-top: 4px;
-  width: 25px;
-  height: 25px;
-}
-
-.remove-top {
-  margin-left: 10px;
-  margin-top: 1px;
-}
-
-.minus {
-  margin-right: -4px;
-}
-
 .delete {
   margin-top: -20px;
 }
 
-.quantity-control {
+.quantity-control-add {
   margin-top: 15px;
   max-height: 30px;
   max-width: 22px;
+  border-radius: 5px;
+}
+
+.quantity-control-subtract {
+  margin-top: 15px;
+  max-height: 30px;
+  max-width: 26px;
   border-radius: 5px;
 }
 
