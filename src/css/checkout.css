@@ -42,19 +42,13 @@
   padding-right: 20px;
 }
 
-.delete {
-  margin-top: -20px;
-}
-
 .quantity-control-add {
-  margin-top: 15px;
   max-height: 30px;
   max-width: 22px;
   border-radius: 5px;
 }
 
 .quantity-control-subtract {
-  margin-top: 15px;
   max-height: 30px;
   max-width: 26px;
   border-radius: 5px;
@@ -65,7 +59,6 @@
 }
 
 .remove-item {
-  margin-top: 0px;
   max-height: 30px;
   border-radius: 5px;
 }
@@ -293,10 +286,6 @@
     justify-content: space-around;
     gap: 20px;
     width: 76%;
-  }
-
-  .remove-item {
-    margin-top: 15px;
   }
 
   .genre-title {

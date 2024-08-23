@@ -10,6 +10,7 @@ function addItem(item) {
   let cartItems = getCartItems();
   // Add another item
   const index = cartItems.findIndex((cartItem) => cartItem.id === item.id);
+
   if (index !== -1) {
     cartItems[index].quantity += 1;
   }
@@ -24,6 +25,7 @@ function subtractItem(item) {
   let cartItems = getCartItems();
   // Remove a single item from the list that matches the same ID
   const index = cartItems.findIndex((cartItem) => cartItem.id === item.id);
+
   if (index !== -1 && cartItems[index].quantity > 1) {
     cartItems[index].quantity -= 1;
   }
@@ -82,7 +84,11 @@ function generateCartItemHtml(item) {
 
   const priceElement = document.createElement("p");
   priceElement.textContent = `Price: $${item.price.toFixed(2)}`;
-  priceElement.classList.add("oneItem-price");
+  priceElement.classList.add("one-item-price");
+
+  // Quantity Container
+  const quantityContainer = document.createElement("div");
+  quantityContainer.classList.add("quantity-container");
 
   // Quantity
   const quantityElement = document.createElement("p");
@@ -114,6 +120,12 @@ function generateCartItemHtml(item) {
     removeItem(item);
   });
 
+  // Append the controls and quantity element to the quantity container
+  quantityContainer.appendChild(subtractButton);
+  quantityContainer.appendChild(quantityElement);
+  quantityContainer.appendChild(addButton);
+  quantityContainer.appendChild(removeButton);
+
   // Total Price
   const totalElement = document.createElement("p");
   const totalPrice = item.price * item.quantity;
@@ -124,11 +136,14 @@ function generateCartItemHtml(item) {
   cartItemElement.appendChild(titleElement);
   cartItemElement.appendChild(genreElement);
   cartItemElement.appendChild(priceElement);
-  cartItemElement.appendChild(quantityElement);
-  cartItemElement.appendChild(subtractButton);
-  cartItemElement.appendChild(addButton);
-  cartItemElement.appendChild(removeButton);
+  cartItemElement.appendChild(quantityContainer);
+
+  quantityContainer.appendChild(quantityElement);
+  quantityContainer.appendChild(subtractButton);
+  quantityContainer.appendChild(addButton);
+  quantityContainer.appendChild(removeButton);
   cartItemElement.appendChild(totalElement);
+
   imgWrapper.appendChild(imgContainer);
   cartWrapper.appendChild(imgWrapper);
   cartWrapper.appendChild(titleWrapper);
